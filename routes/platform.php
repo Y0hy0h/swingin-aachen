@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\Event\EventListScreen;
+use App\Orchid\Screens\Event\EventEditScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
@@ -32,8 +34,6 @@ Route::screen('roles/{roles}/edit', RoleEditScreen::class)->name('platform.syste
 Route::screen('roles/create', RoleEditScreen::class)->name('platform.systems.roles.create');
 Route::screen('roles', RoleListScreen::class)->name('platform.systems.roles');
 
-// Example...
-Route::screen('example', ExampleScreen::class)->name('platform.example');
-Route::screen('example-fields', ExampleFieldsScreen::class)->name('platform.example.fields');
-Route::screen('example-layouts', ExampleLayoutsScreen::class)->name('platform.example.layouts');
-//Route::screen('/dashboard/screen/idea', 'Idea::class','platform.screens.idea');
+Route::screen('events/new', EventEditScreen::class)->name('platform.events.new');
+Route::screen('events/{event}', EventEditScreen::class)->name('platform.events.edit');
+Route::screen('events', EventListScreen::class)->name('platform.events.list');

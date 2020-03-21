@@ -9,7 +9,9 @@ use App\Orchid\Composers\SystemMenuComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Orchid\Platform\Dashboard;
+use Orchid\Platform\ItemMenu;
 use Orchid\Platform\ItemPermission;
+use Orchid\Platform\Menu;
 
 class PlatformProvider extends ServiceProvider
 {

@@ -30,5 +30,11 @@ class MainMenuComposer
      */
     public function compose()
     {
+        $this->dashboard->menu->add(Menu::MAIN,
+            ItemMenu::label('Events')
+                ->slug('events-menu')
+                ->route('platform.events.list')
+                ->icon('icon-people')
+        );
     }
 }

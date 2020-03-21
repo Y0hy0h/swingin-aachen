@@ -1,22 +1,21 @@
 <?php
 
-declare(strict_types=1);
+namespace App\Orchid\Screens\Event;
 
-namespace App\Orchid\Screens;
-
-use Orchid\Platform\Dashboard;
+use App\Event;
+use App\Orchid\Layouts\Event\EventListLayout;
 use Orchid\Screen\Actions\Link;
-use Orchid\Screen\Layout;
 use Orchid\Screen\Screen;
+use Orchid\Screen\Layout;
 
-class PlatformScreen extends Screen
+class EventListScreen extends Screen
 {
     /**
      * Display header name.
      *
      * @var string
      */
-    public $name = 'Overview';
+    public $name = 'Events';
 
     /**
      * Query data.
@@ -26,9 +25,8 @@ class PlatformScreen extends Screen
     public function query(): array
     {
         return [
-            'status' => Dashboard::checkUpdate(),
-        ];
-    }
+            'events' => Event::paginate()
+        ];    }
 
     /**
      * Button commands.
@@ -38,6 +36,9 @@ class PlatformScreen extends Screen
     public function commandBar(): array
     {
         return [
+            Link::make('Create new')
+                ->icon('icon-pencil')
+                ->route('platform.events.new')
         ];
     }
 
@@ -49,7 +50,7 @@ class PlatformScreen extends Screen
     public function layout(): array
     {
         return [
-            Layout::view('platform::partials.update'),
+            EventListLayout::class
         ];
     }
 }
