@@ -25,8 +25,9 @@ class EventListScreen extends Screen
     public function query(): array
     {
         return [
-            'events' => Event::paginate()
-        ];    }
+            'events' => Event::paginate(),
+        ];
+    }
 
     /**
      * Button commands.

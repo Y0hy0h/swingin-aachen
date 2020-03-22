@@ -9,9 +9,6 @@ class Event extends Model
 {
     use AsSource;
 
-    /**
-     * @var array
-     */
     protected $fillable = [
         'title'
     ];

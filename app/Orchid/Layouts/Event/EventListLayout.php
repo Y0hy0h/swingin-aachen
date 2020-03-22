@@ -23,13 +23,22 @@ class EventListLayout extends Table
     {
         return [
             TD::set('title', 'Title')
+                ->sort()
                 ->render(function (Event $event) {
                     return Link::make($event->title)
                         ->route('platform.events.edit', $event);
                 }),
 
-            TD::set('created_at', 'Created'),
-            TD::set('updated_at', 'Updated'),
+            TD::set('created_at', 'Created')
+                ->sort()
+                ->render(function (Event $event) {
+                    return $event->created_at->toDateTimeString();
+                }),
+            TD::set('updated_at', 'Updated')
+                ->sort()
+                ->render(function (Event $event) {
+                    return $event->updated_at->toDateTimeString();
+                }),
         ];
     }
 }
