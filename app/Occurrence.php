@@ -5,16 +5,18 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Orchid\Screen\AsSource;
 
-class Event extends Model
+class Occurrence extends Model
 {
     use AsSource;
 
     protected $fillable = [
-        'title'
+        'event_id',
+        'date',
+        'time'
     ];
 
-    public function occurrences()
+    public function event()
     {
-        return $this->hasMany('App\Occurrence');
+        return $this->belongsTo('App\Event');
     }
 }

@@ -31,6 +31,7 @@ class EventListLayout extends Table
 
             TD::set('created_at', 'Created')
                 ->sort()
+                ->defaultHidden()
                 ->render(function (Event $event) {
                     return $event->created_at->toDateTimeString();
                 }),

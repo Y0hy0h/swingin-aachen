@@ -2,10 +2,16 @@
 
 declare(strict_types=1);
 
+use App\Occurrence;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator;
 use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 
 //Screens
+
+// Platform
+Breadcrumbs::for('platform.main', function (BreadcrumbsGenerator $trail) {
+    $trail->push(__('Main'), route('platform.main'));
+});
 
 // Platform > System > Users
 Breadcrumbs::for('platform.systems.users', function (BreadcrumbsGenerator $trail) {
@@ -37,20 +43,26 @@ Breadcrumbs::for('platform.systems.roles.edit', function (BreadcrumbsGenerator $
     $trail->push(__('Role'), route('platform.systems.roles.edit', $role));
 });
 
-// Platform -> Example Screen
-Breadcrumbs::for('platform.example', function (BreadcrumbsGenerator $trail) {
-    $trail->parent('platform.index');
-    $trail->push(__('Example screen'));
+// Platform > Events
+Breadcrumbs::for('platform.events.list', function (BreadcrumbsGenerator $trail) {
+    $trail->parent('platform.main');
+    $trail->push(__('Events'), route('platform.events.list'));
 });
 
-// Platform -> Example Fields
-Breadcrumbs::for('platform.example.fields', function (BreadcrumbsGenerator $trail) {
-    $trail->parent('platform.index');
-    $trail->push(__('Form controls'));
+// Platform > Events > Edit
+Breadcrumbs::for('platform.events.edit', function (BreadcrumbsGenerator $trail, $event) {
+    $trail->parent('platform.events.list');
+    $trail->push(__('Edit'), route('platform.events.edit', $event));
 });
 
-// Platform -> Example Layouts
-Breadcrumbs::for('platform.example.layouts', function (BreadcrumbsGenerator $trail) {
-    $trail->parent('platform.index');
-    $trail->push(__('Overview layouts'));
+// Platform > Events > New Occurrence
+Breadcrumbs::for('platform.occurrences.create', function (BreadcrumbsGenerator $trail, $occurrence) {
+    $trail->parent('platform.events.list');
+    $trail->push(__('Create Occurrence'), route('platform.occurrences.create', $occurrence));
+});
+
+// Platform > Events > Event > Occurrence
+Breadcrumbs::for('platform.occurrences.edit', function (BreadcrumbsGenerator $trail, $occurrence) {
+    $trail->parent('platform.events.edit', Occurrence::find($occurrence)->event);
+    $trail->push(__('Occurrence'), route('platform.occurrences.edit', $occurrence));
 });

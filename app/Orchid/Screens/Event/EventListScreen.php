@@ -39,7 +39,7 @@ class EventListScreen extends Screen
         return [
             Link::make('Create new')
                 ->icon('icon-pencil')
-                ->route('platform.events.new')
+                ->route('platform.events.create')
         ];
     }
 
