@@ -56,9 +56,9 @@ Breadcrumbs::for('platform.events.edit', function (BreadcrumbsGenerator $trail, 
 });
 
 // Platform > Events > New Occurrence
-Breadcrumbs::for('platform.occurrences.create', function (BreadcrumbsGenerator $trail, $occurrence) {
+Breadcrumbs::for('platform.occurrences.create', function (BreadcrumbsGenerator $trail) {
     $trail->parent('platform.events.list');
-    $trail->push(__('Create Occurrence'), route('platform.occurrences.create', $occurrence));
+    $trail->push(__('Create Occurrence'), route('platform.occurrences.create'));
 });
 
 // Platform > Events > Event > Occurrence

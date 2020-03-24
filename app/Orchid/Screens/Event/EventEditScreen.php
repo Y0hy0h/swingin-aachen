@@ -39,7 +39,7 @@ class EventEditScreen extends Screen
         return [
             Link::make('Create Occurrence')
                 ->icon('icon-calendar')
-                ->route('platform.occurrences.create', ['event' => $this->event])
+                ->route('platform.occurrences.create')
                 ->canSee($this->event->exists),
 
             Button::make('Create Event')
