@@ -51,7 +51,7 @@ class EventListScreen extends Screen
     public function layout(): array
     {
         return [
-            EventListLayout::class
+            EventListLayout::class,
         ];
     }
 }

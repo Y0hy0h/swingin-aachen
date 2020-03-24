@@ -30,7 +30,7 @@ class EventEditScreen extends Screen
 
         return [
             'event' => $event,
-            'occurrences' => $event->occurrences
+            'occurrences' => $event->occurrences()->paginate()
         ];
     }
 

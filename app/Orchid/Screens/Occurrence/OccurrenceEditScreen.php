@@ -2,10 +2,8 @@
 
 namespace App\Orchid\Screens\Occurrence;
 
-use App\Event;
 use App\Occurrence;
 use App\Orchid\Layouts\Occurrence\OccurrenceEditLayout;
-use App\Orchid\Layouts\User\UserEditLayout;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Orchid\Screen\Actions\Button;

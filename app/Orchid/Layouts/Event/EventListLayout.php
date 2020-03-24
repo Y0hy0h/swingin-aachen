@@ -9,16 +9,8 @@ use Orchid\Screen\TD;
 
 class EventListLayout extends Table
 {
-    /**
-     * Data source.
-     *
-     * @var string
-     */
     protected $target = 'events';
 
-    /**
-     * @return TD[]
-     */
     protected function columns(): array
     {
         return [
