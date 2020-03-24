@@ -3,7 +3,7 @@
 namespace App\Orchid\Screens\Occurrence;
 
 use App\Occurrence;
-use App\Orchid\Layouts\Occurrence\OccurrenceEditLayout;
+use App\Orchid\Layouts\Occurrence\OccurrenceEditSingleLayout;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Orchid\Screen\Actions\Button;
@@ -52,7 +52,7 @@ class OccurrenceEditScreen extends Screen
     public function layout(): array
     {
         return [
-            OccurrenceEditLayout::class,
+            OccurrenceEditSingleLayout::class,
         ];
     }
 
