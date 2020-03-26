@@ -22,7 +22,7 @@ Breadcrumbs::for('platform.systems.users', function (BreadcrumbsGenerator $trail
 // Platform > System > Users > User
 Breadcrumbs::for('platform.systems.users.edit', function (BreadcrumbsGenerator $trail, $user) {
     $trail->parent('platform.systems.users');
-    $trail->push(__('Edit'), route('platform.systems.users.edit', $user));
+    $trail->push(__('Edit User'), route('platform.systems.users.edit', $user));
 });
 
 // Platform > System > Roles
@@ -52,7 +52,7 @@ Breadcrumbs::for('platform.events.list', function (BreadcrumbsGenerator $trail) 
 // Platform > Events > Edit
 Breadcrumbs::for('platform.events.edit', function (BreadcrumbsGenerator $trail, $event) {
     $trail->parent('platform.events.list');
-    $trail->push(__('Edit'), route('platform.events.edit', $event));
+    $trail->push(__('Edit Event'), route('platform.events.edit', $event));
 });
 
 // Platform > Events > New Occurrence

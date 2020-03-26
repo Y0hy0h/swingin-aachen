@@ -37,7 +37,7 @@ class EventEditScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Link::make('Create Occurrence')
+            Link::make('Create Occurrences')
                 ->icon('icon-calendar')
                 ->route('platform.occurrences.create')
                 ->canSee($this->event->exists),
