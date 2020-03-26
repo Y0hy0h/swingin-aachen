@@ -1,15 +1,17 @@
 # Swingin&rsquo; Aachen
-## Gettings started
+## Getting started
 ### Requirements
 1. Install PHP and MySQL. (On Windows, we recommend [XAMPP].)
 2. Install [Composer].
 3. Install [Laravel].
 4. Install [Node.js]. (For compiling the assets, like CSS.)
+5. Tune in to [Swing Street Radio]. During development, swing music must play at all times.
 
 [XAMPP]: https://www.apachefriends.org/index.html
 [Composer]: https://getcomposer.org/
 [Laravel]: https://laravel.com/
 [Node.js]: https://nodejs.org/
+[Swing Street Radio]: https://www.swingstreetradio.org/listen-live-and-requests/
 
 ### Setup
 1. Configure the `.env` file.
