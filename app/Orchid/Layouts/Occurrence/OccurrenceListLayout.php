@@ -19,7 +19,11 @@ class OccurrenceListLayout extends Table
             TD::set('date', 'Date')
                 ->sort()
                 ->render(function (Occurrence $occurrence) {
-                    return $occurrence->date;
+                    return Link::make($occurrence->date)
+                        ->route(
+                            'platform.occurrences.edit',
+                            $occurrence->id
+                        );
                 }),
             TD::set('time', 'Time')
                 ->sort()
@@ -45,16 +49,9 @@ class OccurrenceListLayout extends Table
                     return DropDown::make()
                         ->icon('icon-options-vertical')
                         ->list([
-                            Link::make(__('Edit'))
-                                ->route(
-                                    'platform.occurrences.edit',
-                                    $occurrence->id
-                                )
-                                ->icon('icon-pencil'),
 
                             Button::make(__('Delete'))
                                 ->method('removeOccurrence')
-                                ->confirm(__('Are you sure you want to delete the occurrence?'))
                                 ->parameters([
                                     'id' => $occurrence->id,
                                 ])
